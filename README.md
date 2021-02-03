@@ -1,5 +1,11 @@
 # hopevue
 
+practical project - exercises experimental 
+
+Vuetify
+VueRouter
+
+
 ## Project setup
 ```
 npm install

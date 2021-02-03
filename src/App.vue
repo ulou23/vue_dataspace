@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar app dark>
+   
+  
+      <div class="d-flex pa-2">
+        DataSpaces HUB </div>
+        <v-btn to="/dataspaces" text> DataSpaces
+        </v-btn>
+        <v-btn to="/add" text> Add Space </v-btn>    
+        <div class="d-flex justify-sm-end">
+    <v-btn to="/love"> Love</v-btn></div>
+    </v-app-bar>
+    <v-main>
+    
+   
+<router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  data: function() {
+    return{
+    propertyname: "love",
+    items: ["ab", "ccc"] }
+  },
+    beforeCreate: function(){
+    console.log("created");
+  },
+  
+  created: function(){
+    console.log("created");
+  }
+};
+</script>
