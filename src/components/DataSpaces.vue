@@ -1,13 +1,14 @@
 <template>
-    <v-row align="center" class="list mx-auto">
-        <v-col cols="12" md="10">
+<v-container class="grey lighten-5">
+    <v-row class="mb-6" justify="center">
+        <v-col cols="12" md="8" sm="6">
             <v-text-field v-model="title" label="Search by title"> </v-text-field>
         </v-col>
-        <v-col cols="12" md="2">
+        <v-col cols="6" md="4">
             <v-btn small @click="searchT"> Search </v-btn>
         </v-col>
         <v-col cols="12" sm="12">
-            <v-card class="mx-auto" title>
+            <v-card class="pa-2" title>
                 <v-card-title> Data Spaces</v-card-title>
                 <v-data-table :headers="headers" :items="data" :hide-default-footer="true">
                     <template v-slot:[`item.actions`]="{item}">
@@ -19,7 +20,7 @@
             </v-card>
         </v-col>
     </v-row>
-
+</v-container>
 </template>
 <script>
 import DataSpaceService from "@/DataService"
