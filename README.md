@@ -1,9 +1,10 @@
 # hopevue
 
 practical project - exercises experimental 
+* Vuetify
+* VueRouter
+* Axios
 
-Vuetify
-VueRouter
 
 
 ## Project setup
