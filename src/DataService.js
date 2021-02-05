@@ -1,28 +1,28 @@
-import http from "/httpconn"
+import axios from "axios";
 
 class DataSpaceService{
     getAll(){
-        return http.get("/dataspaces")
+        return axios.get("http://localhost:3500/dataspaces")
     }
 
     get(id){
-        return http.get(`/dataspaces/${id}`)
+        return axios.get(`http://localhost:3500/dataspaces/${id}`)
     }
     create(data){
-        return http.post("/dataspaces", data)
+        return axios.post("/http://localhost:3500/dataspaces", data)
     }
 
     update(id,data){
-        return http.put(`/dataspaces/${id}`,data)
+        return axios.put(`http://localhost:3500/dataspaces/${id}`,data)
     }
     delete(id){
-        return http.delete(`/dataspaces/${id}`)
+        return axios.delete(`http://localhost:3500/dataspaces/${id}`)
     }
     deleteAll(){
-        return http.delete(`/dataspaces`)
+        return axios.delete(`http://localhost:3500/dataspaces`)
     }
     findBytitle(title){
-        return http.get(`/dataspaces?title=${title}`)
+        return axios.get(`http://localhost:3500/dataspaces?title=${title}`)
     }
 }
 

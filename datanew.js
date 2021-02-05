@@ -15,7 +15,7 @@ var data=[
 
 module.exports=function(){
     return {
-        products:data,
+        dataspaces:data,
       
     }
 }

@@ -1,6 +1,6 @@
 <template>
 <v-container class="grey lighten-5">
-    <v-row class="mb-6" justify="center">
+    <v-row class="mt-6" justify="center">
         <v-col cols="12" md="8" sm="6">
             <v-text-field v-model="title" label="Search by title"> </v-text-field>
         </v-col>
@@ -8,9 +8,9 @@
             <v-btn small @click="searchT"> Search </v-btn>
         </v-col>
         <v-col cols="12" sm="12">
-            <v-card class="pa-2" title>
+            <v-card class="pa-9" title>
                 <v-card-title> Data Spaces</v-card-title>
-                <v-data-table :headers="headers" :items="data" :hide-default-footer="true">
+                <v-data-table :headers="headers" :items="dataspaces" :hide-default-footer="true">
                     <template v-slot:[`item.actions`]="{item}">
                         <v-icon small class="mr-2" @click="editData(item.id)">mdi-pencil </v-icon>
                         <v-icon small class="mr-2" @click="deleteData(item.id)">mdi-delete </v-icon>
@@ -33,8 +33,7 @@ export default {
     
               headers: [
         { text: "Title", align: "start", sortable: false, value: "title" },
-        { text: "Description", value: "description", sortable: false },
-        { text: "Status", value: "status", sortable: false },
+        { text: "Description", value: "desc", sortable: false },
         { text: "Actions", value: "actions", sortable: false },
       ],
     };
@@ -78,7 +77,7 @@ export default {
     },
 
     editData(id) {
-      this.$router.push({ name: "dataspace", params: { id: id } });
+      this.$router.push({ name: "dataspace-detail", params: { id: id } });
     },
 
     deleteData(id) {

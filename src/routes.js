@@ -14,8 +14,8 @@ component:HelloWorld,
 name: "dataspaces",
 component: ()=> import("./components/DataSpaces")},
 {
-    path:'/dataspace',
-    name: "dataspace",
+    path:'/dataspaces/:id',
+    name: "dataspace-detail",
     component: ()=> import("./components/DataSpace") 
 },
 {

@@ -3,8 +3,8 @@
 <v-snackbar :timeout="-1" :value="true" absolute centered shaped > Add DataSpace </v-snackbar>
 <div v-if="!submitted">
     <v-form ref="form" lazy-validation>
-        <v-text-field v-model="data.title" :rules="[(v)=> !!v || 'title is required']" label="Title" required></v-text-field>
-        <v-text-field v-model="data.desc" label="Description" required> </v-text-field>
+        <v-text-field v-model="dataspace.title" :rules="[(v)=> !!v || 'title is required']" label="Title" required></v-text-field>
+        <v-text-field v-model="dataspace.desc" label="Description" required> </v-text-field>
     </v-form>
     <v-btn color="primary" class="mt-3" @click="saveData"> Submit </v-btn>
 </div>
@@ -25,7 +25,7 @@ export default {
     name: "add-data",
     data(){
         return {
-            data:{
+            dataspace:{
                 id: null,
                 title: "",
                 desc: "",
@@ -36,18 +36,18 @@ export default {
     methods: {
         saveData(){
             var data={
-                title: this.data.title,
-                desc: this.data.desc,
+                title: this.dataspace.title,
+                desc: this.dataspace.desc,
             };
             DataSpaceService.create(data).then((res)=> {
-                this.data.id =res.data.id;
+                this.dataspace.id =res.data.id;
                 console.log(res.data);
                 this.submitted=true;
             }).catch((e)=> console.log(e))
         },
         newData(){
             this.submitted=false;
-            this.data={};
+            this.dataspace={};
         }
     }
     
