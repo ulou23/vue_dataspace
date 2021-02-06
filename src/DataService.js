@@ -10,8 +10,8 @@ let http=axios.create({
 });
 
 class DataSpaceService{
-    getAll(){
-        return http.get("/dataspaces")
+    getAll(params){
+        return http.get("/dataspaces", { params } );
     }
 
     get(id){

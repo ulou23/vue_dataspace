@@ -4,7 +4,7 @@ practical project - exercises experimental
 * Vuetify
 * VueRouter
 * Axios
-* json-server (API)
+* json-server (API-test)
 
 
 
