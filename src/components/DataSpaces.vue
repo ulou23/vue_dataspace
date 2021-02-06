@@ -5,8 +5,22 @@
             <v-text-field v-model="title" label="Search by title"> </v-text-field>
         </v-col>
         <v-col cols="6" md="4">
-            <v-btn small @click="searchT"> Search </v-btn>
+              <v-btn small @click="page =1; retrieveDataSpaces();">Search </v-btn>
         </v-col>
+
+<v-col cols="12" sm="12">
+    <v-row>
+        <v-col cols="4" sm="3">
+            <v-select v-model="pageSize" :items="pageSizes" label="Spaces per Page" @change="handlePageSize" > </v-select>
+        </v-col>
+        <v-col cols="12" sm="9">
+            <v-pagination v-model="page" :length="totalPages" total-visible="6" next-icon="mdi-menu-right" prev-icon="mdi-menu-left" @input="handleChange"> </v-pagination>
+        </v-col>
+    </v-row>
+</v-col>
+ 
+   
+
         <v-col cols="12" sm="12">
             <v-card class="pa-9" title>
                 <v-card-title> Data Spaces</v-card-title>

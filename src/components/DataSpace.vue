@@ -1,6 +1,6 @@
 <template>
 
-<div v-if="currSpace" class="pa-3 grey lighten-5">
+<div v-if="currSpace" class="pa-5 grey lighten-5">
     <v-chip class="ma-2 font-weight-black">
   EDIT Data Space 
     </v-chip>
