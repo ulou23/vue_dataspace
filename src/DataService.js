@@ -1,28 +1,37 @@
 import axios from "axios";
 
+
+let http=axios.create({
+    baseURL: "http://localhost:3500",
+    headers:{
+        "Content-type": "application/json"
+    }
+
+});
+
 class DataSpaceService{
     getAll(){
-        return axios.get("http://localhost:3500/dataspaces")
+        return http.get("/dataspaces")
     }
 
     get(id){
-        return axios.get(`http://localhost:3500/dataspaces/${id}`)
+        return http.get(`/dataspaces/${id}`)
     }
     create(data){
-        return axios.post("/http://localhost:3500/dataspaces", data)
+        return http.post("/dataspaces", data)
     }
 
     update(id,data){
-        return axios.put(`http://localhost:3500/dataspaces/${id}`,data)
+        return http.put(`/dataspaces/${id}`,data)
     }
     delete(id){
-        return axios.delete(`http://localhost:3500/dataspaces/${id}`)
+        return http.delete(`/dataspaces/${id}`)
     }
     deleteAll(){
-        return axios.delete(`http://localhost:3500/dataspaces`)
+        return http.delete(`/dataspaces`)
     }
     findBytitle(title){
-        return axios.get(`http://localhost:3500/dataspaces?title=${title}`)
+        return http.get(`/dataspaces?title=${title}`)
     }
 }
 

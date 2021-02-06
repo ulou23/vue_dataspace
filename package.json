@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "json": "json-server datanew.js -p 3500 -m authMiddle.js"
+    "json": "json-server datanew.js -p 3500"
   },
   "dependencies": {
     "bootstrap-vue": "^2.17.3",

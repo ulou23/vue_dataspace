@@ -1,7 +1,9 @@
 <template>
 
-<div v-if="currSpace" class="py-3 grey lighten-5">
-  <p class="pa-16 mx-auto"> EDIT your Data Space </p>
+<div v-if="currSpace" class="pa-3 grey lighten-5">
+    <v-chip class="ma-2 font-weight-black">
+  EDIT Data Space 
+    </v-chip>
    <v-form ref="form" lazy-validation>
      <v-text-field v-model="currSpace.title" :rules="[(v)=> !!v || 'Title is required']" label="Title" required > </v-text-field>
         <v-text-field v-model="currSpace.desc" :rules="[(v)=> !!v || 'Description is required']" label="Description" required > </v-text-field>
@@ -12,10 +14,10 @@
         <v-btn color="success" small @click="updateData" >
             Update </v-btn>
    </v-form>
-   <p class="mt-3"> {{mess}} </p>
+   <v-chip class="mt-3"> {{mess}} </v-chip>
 </div>
 <div v-else>
-    <p> mmmm</p>
+    <p> Click on the DataSpace</p>
     </div>
 
 </template>
@@ -33,7 +35,8 @@ export default {
     },
     methods:{
         getData(id){
-            DataSpaceService.get(id).then((res)=> { this.currSpace=res.data; console.log(res.data);}).catch((e)=> { console.log(e)});
+            DataSpaceService.get(id).then((res)=> { this.currSpace=res.data; 
+            console.log(res.data);}).catch((e)=> { console.log(e)});
         },
 
     updateData(){
@@ -47,7 +50,7 @@ export default {
     },
     mounted(){
         this.mess="",
-        this.getData(this.$router.params.id);
+        this.getData(this.$route.params.id);
     },
 };
 
